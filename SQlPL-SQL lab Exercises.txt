@@ -1,0 +1,632 @@
+SQl/PL-SQL lab Exercises
+Section 1: Familiarization with Oracle SQL Environment
+
+Part A: Basic SQL Commands  
+
+1. Display the message ‘Welcome to Oracle SQL’.
+
+SELECT 'WELCOME TO SQL' AS MESSAGE FROM DUAL;
+
+Output:
+MESSAGE
+---------------
+WELCOME TO SQL
+
+2. Display your name.
+
+SELECT 'ASHWINI' AS NAME FROM DUAL;
+
+NAME
+---------------
+ASHWINI
+
+3. Display your register number.
+
+SELECT '26CS1279' AS REGISTER FROM DUAL;
+
+REGISTER_NUMBER
+---------------
+26CS1279
+
+4. Display your department name.
+
+SELECT 'MCA' AS DEPARTMENT FROM DUAL;
+
+DEPARTMENT
+---------------
+MCA 
+
+5. Display your college name.
+
+SELECT 'RAJAGIRI' AS COLLEGE FROM DUAL;
+
+COLLEGE
+---------------
+RAJAGIRI
+
+6. Display the current date.
+
+SELECT SYSDATE AS TODAY FROM DUAL;
+
+TODAY
+---------
+11-JUL-26
+
+7. Display the current date and time.
+
+SELECT TO_CHAR(SYSDATE,'DD-MM-YYYY HH:MM:SS AM')AS TODAY FROM DUAL;
+
+CURRENT_DATETIME
+--------------------
+11-JUL-2026 14:35:20
+
+8. Display the result of 25 + 35.
+
+SELECT 25+35 AS RESULT FROM DUAL;
+
+RESULT
+---------
+60
+
+9. Display the result of 100 – 45.
+
+SELECT 100-45 AS RESULT FROM DUAL;
+
+RESULT
+---------
+55
+
+10. Display the result of 15 × 8.
+
+SELECT 15*8 AS RESULT FROM DUAL;
+
+RESULT
+---------
+120
+
+11. Display the result of 144 ÷ 12.
+
+SELECT 144/12 AS RESULT FROM DUAL;
+
+RESULT
+---------
+12
+
+12. Display the remainder when 27 is divided by 5.
+
+SELECT MOD(27,5) AS REMINDER FROM DUAL;
+
+REMAINDER
+---------
+2
+
+13. Display the square of 12.
+
+SELECT POWER(12,2) AS SQAURE FROM DUAL;
+
+SQUARE
+---------
+144
+
+14. Display the cube of 5.
+
+SELECT POWER(5,3) AS CUBE FROM DUAL;
+
+CUBE
+---------
+125
+
+15. Display the value of 2 raised to the power 10.
+
+SELECT POWER(2,10) AS SQUARE FROM DUAL;
+
+RESULT
+---------
+1024
+
+16. Display your name in uppercase.
+
+SELECT UPPER('ASHWINI') AS NAME FROM DUAL; 
+
+NAME_UPPER
+---------------
+ASHWINI
+
+17. Display your name in lowercase.
+
+SELECT LOWER('ASHWINI') AS NAME FROM DUAL;
+
+NAME_LOWER
+---------------
+ashwini
+
+18. Display your department name in uppercase.
+
+SELECT UPPER('MCA')AS DEPARTMENT FROM DUAL;
+
+DEPT_UPPER
+---------------
+MCA
+
+19. Find the length of your name.
+
+SELECT LENGTH('ASHWINI')AS NAME FROM DUAL;
+
+NAME_LENGTH
+-----------
+7
+
+20. Extract the first three letters of your name.
+
+SELECT SUBSTR('ASHWINI',1,3)AS NAME FROM DUAL;
+
+FIRST_THREE
+------------
+ASH 
+
+21. Extract the last four letters of your name.
+
+SELECT SUBSTR('ASHWINI',-4,4) AS NAME FROM DUAL;
+
+LAST_FOUR
+------------
+WINI
+
+22. Concatenate:
+
+1. First Name
+2. Last Name
+
+SELECT 'ASHWINI' || ' ' || 'A' AS ASHWINI FROM DUAL;
+
+FULL_NAME
+------------
+ASHWINI A
+
+23. Repeat your name twice using concatenation.
+
+SELECT 'ASHWINI' || ' ' || 'ASHWINI' AS TWICE FROM DUAL; 
+
+REPEATED_NAME
+-------------------
+ASHWINI ASHWINI
+
+24. Round 23.678 to:
+
+1. nearest integer
+
+SELECT ROUND(23.678,0) NEAREST_INT FROM DUAL;
+
+NEAREST_INT  
+-----------   
+24      
+      
+2. two decimal places
+
+SELECT ROUND(23.678,2) TWO_DECIMAL FROM DUAL;
+
+TWO_DECIMAL  
+-----------
+23.68
+
+25. Find the absolute value of -125.
+
+SELECT ABS(-125) ABS_VALUE FROM DUAL;
+
+ABSOLUTE_VALUE
+--------------
+125
+
+26. Find the square root of 625.
+
+SELECT SQRT(625) AS SQAURE_ROOT FROM DUAL;
+
+SQUARE_ROOT
+-----------
+25
+
+27. Find the greatest among:
+1. 10, 25, 18
+
+SELECT GREATEST(10,25,18) AS GREATEST_VALUE FROM DUAL;
+
+GREATEST_VALUE
+---------------
+25
+
+28. Find the least among:
+1. 10, 25, 18
+
+SELECT LEAST(10,25,18) AS LEAST_VALUE FROM DUAL;
+
+LEAST_VALUE
+------------
+10
+
+29. Generate a random number.
+
+SELECT DBMS_RANDOM.VALUE AS RANDOM_VALUE FROM DUAL;
+
+RANDOM_NUMBER
+--------------------
+0.6394857203910284
+
+30. Truncate:
+
+1. 98.7654 to two decimal places 
+
+SELECT TRUNC(98.7654) AS TRUNCATED_VALUE FROM DUAL;
+
+TRUNCATED_VALUE
+----------------
+98.76
+
+31. Find:
+
+1. CEIL(12.3)
+
+SELECT CEIL(12.3) AS RESULT FROM DUAL;
+
+RESULT
+----------
+13
+
+2. FLOOR(12.9)
+
+SELECT FLOOR(12.9) AS RESULT FROM DUAL;
+
+RESULT
+----------
+12
+
+32. Display today's date.
+
+SELECT SYSDATE AS TODAY FROM DUAL;
+
+TODAY
+---------
+12-JUL-26
+
+33. Display current date and time.
+
+SELECT TO_CHAR(SYSDATE,'DD-MM-YYYY HH:MM:SS AM' )AS TODAY FROM DUAL;
+
+CURRENT_DATETIME
+--------------------
+12-JUL-2026 14:35:20
+
+34. Display tomorrow's date. 
+
+SELECT SYSDATE +1 AS TOMORROW FROM DUAL;
+
+TOMORROW
+---------
+13-JUL-26
+
+35. Display yesterday's date.
+
+SELECT SYSDATE -1 AS YESTERDAY FROM DUAL;
+
+TOMORROW
+---------
+13-JUL-26
+
+36. Display date after 100 days.
+
+SELECT SYSDATE +100 AS AFTER FROM DUAL;
+
+AFTER_100_DAYS
+---------------
+20-OCT-26
+
+37. Display date before 75 days.
+
+SELECT SYSDATE -75 AS BEFORE FROM DUAL;
+
+BEFORE_75_DAYS
+---------------
+28-APR-26
+
+38. Display current day name.
+
+SELECT TO_CHAR(SYSDATE ,'DAY') AS DAY FROM DUAL;
+
+DAY_NAME
+---------
+SUNDAY
+
+39. Display current month name.
+
+SELECT TO_CHAR(SYSDATE,'MONTH')AS MONTH FROM DUAL;
+
+MONTH_NAME
+-----------
+JULY
+
+40. Display current year.
+
+SELECT TO_CHAR(SYSDATE,'YYYY')AS YEAR FROM DUAL;
+
+CURRENT_YEAR
+------------
+2026
+
+41. Display current week number.
+
+SELECT TO_CHAR(SYSDATE,'WW')AS WEEK FROM DUAL;
+
+WEEK_NUMBER
+-----------
+28
+
+42. Display current quarter.
+
+SELECT TO_CHAR(SYSDATE,'Q')AS QUARTER FROM DUAL;
+
+QUARTER
+-------
+3
+
+43. Display first day of current month.
+
+SELECT TRUNC(SYSDATE,'MM')AS MONTH FROM DUAL;
+
+FIRST_DAY_MONTH
+-----------------
+01-JUL-26
+
+44. Display last day of current month.
+
+SELECT LAST_DAY (SYSDATE) AS DUAL;
+
+LAST_DAY_MONTH
+-----------------
+31-JUL-26
+
+45. Display first day of current year.
+
+SELECT TRUNC(SYSDATE,'YYYY') FROM  DUAL;
+
+FIRST_DAY_YEAR
+-----------------
+01-JAN-26
+
+46. Display next Sunday.
+
+SELECT NEXT_DAY(SYSDATE,'SUNDAY') FROM DUAL;
+
+NEXT_SUNDAY
+-------------
+19-JUL-26
+
+47. Display next Monday.
+
+SELECT NEXT_DAY(SYSDATE,'MONDAY') FROM DUAL;
+
+NEXT_MONDAY
+-------------
+13-JUL-26
+
+48. Display next Friday.
+
+SELECT NEXT_DAY(SYSDATE,'FRIDAY') FROM DUAL;
+
+NEXT_FRIDAY
+-------------
+17-JUL-26
+
+49. Display the current date in ‘DD-MM-YYYY’ with 12-hour time formatCURRENT_DATETIME
+
+SELECT TO_CHAR(SYSDATE,'DD-MM-YYYY HH:MM:SS AM')FROM DUAL;
+
+DATE_TIME
+---------------------
+12-07-2026 02:35:20 PM
+
+50. Add six months to current date.
+
+SELECT ADD_MONTHS(SYSDATE,6)FROM DUAL;
+
+ADD_MONTHS
+---------------
+12-JAN-27
+
+51. Add one year to current date.
+
+SELECT ADD_MONTHS(SYSDATE,12)FROM DUAL;
+
+PLUS_1_YEAR
+---------------
+12-JUL-27
+
+52. Find the number of days between two given dates.
+
+SELECT TO_DATE('12-JUL-2026','DD-MON-YYYY') - TO_DATE('01-JAN-2026','DD-MON-YYYY') AS DAYS_BETWEEN FROM DUAL;
+
+DAYS_BETWEEN
+------------
+192
+
+53. Find the number of months between two given dates.
+
+SELECT MONTHS_BETWEEN(TO_DATE('12-JUL-2026','DD-MON-YYYY'), TO_DATE('01-JAN-2026','DD-MON-YYYY')) AS MONTHS_BETWEEN FROM DUAL;
+
+MONTHS_BETWEEN
+--------------
+6.35483871
+
+54. Display current date in DD-MM-YYYY format.
+
+SELECT TO_CHAR(SYSDATE, 'DD-MM-YYYY') FROM DUAL;
+
+CURRENT_DATE_FMT
+-----------------
+12-07-2026
+
+55. Calculate your age in days using your date of birth.
+
+SELECT SYSDATE - TO_DATE('21-05-2005','DD-MM-YYYY') FROM DUAL;
+
+AGE_IN_DAYS
+------------
+7722 
+
+56. Calculate your age in months using your date of birth.
+
+SELECT MONTHS_BETWEEN(SYSDATE, TO_DATE('21-MAY-2005','DD-MON-YYYY')) FROM DUAL;
+
+AGE_IN_MONTHS
+-------------
+253.718
+
+57. Find the day on which you were born.
+
+SELECT TO_CHAR(TO_DATE('21-05-2005','DD-MM-YYYY'),'DAY') FROM DUAL;
+
+BIRTH_DAY
+---------
+SATURDAY
+
+58. Display the number of days remaining in the current year.
+
+SELECT FLOOR(TO_DATE(TO_CHAR(SYSDATE,'YYYY')||'-12-31','YYYY-MM-DD')-SYSDATE ) AS RESULT FROM DUAL;
+
+DAYS_REMAINING
+---------------
+171
+
+59. Display the date exactly four years from today.
+
+SELECT ADD_MONTHS(SYSDATE, 48) FROM DUAL;
+
+ADD_MONTHS
+-------------------
+12-JUL-30
+
+60. Generate the following output using a single query:
+Today is Wednesday, 10 June 2026
+Current Time: 10:30:15
+Display current date in:
+o DD-MM-YYYY
+
+SELECT 'Today is ' || TO_CHAR(SYSDATE,'DAY') || ', ' || TO_CHAR(SYSDATE,'DD Month YYYY') AS LINE1,
+       'Current Time: ' || TO_CHAR(SYSDATE,'HH24:MI:SS') AS LINE2 FROM DUAL;
+
+LINE1                              LINE2
+---------------------------------  --------------------
+Today is SUNDAY, 12 July 2026      Current Time: 14:35:20
+
+62. Display current date in:
+o DD-MON-YYYY
+
+SELECT TO_CHAR(SYSDATE, 'DD-MM-YYYY') FROM DUAL;
+
+DATE
+----------
+12-07-2026
+
+63. Display current date in:
+o DAY, DD MONTH YYYY
+
+SELECT TO_CHAR(SYSDATE, 'DD-MM-YYYY')FROM DUAL;
+
+DATE_MONTH
+------------------------
+SUNDAY, 12 JULY 2026
+
+64. Display current time in:
+o HH:MI:SS
+
+SELECT TO_CHAR(SYSDATE, 'HH24:MI:SS') AS TIME_FMT FROM DUAL;
+
+TIME_FMT
+--------
+14:35:20
+
+65. Display current date and time together.
+
+SELECT TO_CHAR(SYSDATE, 'DD-MM-YYYY HH:MM:SS') AS DATE_TIME FROM DUAL;
+
+DATE_TIME
+--------------------
+12-JUL-2026 14:35:20
+
+66. Display:
+**********
+ORACLE SQL
+**********
+
+SELECT '**********' AS LINE1, 'ORACLE SQL' AS LINE2, '**********' AS LINE3 FROM DUAL;
+
+LINE1        LINE2        LINE3
+----------   ----------   ----------
+**********   ORACLE SQL   **********
+
+67. Display a digital ID card:
+Name : XXXXX
+Department: MCA
+College : Rajagiri
+
+SELECT 'Name : YOUR NAME' AS LINE1, 'Department: MCA' AS LINE2,'College : Rajagiri' AS LINE3 FROM DUAL;
+
+LINE1                  LINE2             LINE3
+---------------------  ----------------  -------------------
+Name : YOUR NAME       Department: MCA   College : Rajagiri
+
+68. Generate a college email ID from your name.
+
+SELECT LOWER('ASHWINI') || 'MCA2613@rajagiri.edu.in' AS COLLEGE_EMAIL FROM DUAL;
+
+COLLEGE_EMAIL
+-----------------------
+ashwiniMCA@rajagiri.edu.in
+
+69. Display: Today is Monday, 04 August 2026
+
+SELECT 'Today is Monday, 04 August 2026' FROM DUAL;
+
+MESSAGE
+--------------------------------
+Today is Monday, 04 August 2026
+
+70. Generate a student code using:
+o First three letters of name
+o Current year
+
+SELECT UPPER(SUBSTR('ashwini', 1, 3)) || TO_CHAR(SYSDATE, 'YYYY') AS STUDENT_CODE FROM DUAL;
+
+STUDENT_CODE
+-------------
+ASH2026
+
+71. Display the current semester code:
+Example:
+MCA2026S1
+
+SELECT 'MCA' || TO_CHAR(SYSDATE, 'YYYY') || 'S1' AS SEMESTER_CODE FROM DUAL;
+
+SEMESTER_CODE
+--------------
+MCA2026S1
+
+72. Display current quarter of the year.
+
+SELECT 'Q' || TO_CHAR(SYSDATE, 'Q') AS CURRENT_QUARTER FROM DUAL;
+
+CURRENT_QUARTER
+----------------
+Q3
+
+73. Generate a password using:
+ first 3 letters of name
+ last 2 digits of birth year
+ random number
+
+SELECT UPPER(SUBSTR('ASHWINI', 1, 3)) || '04' || TO_CHAR(ROUND(DBMS_RANDOM.VALUE(10,99))) AS PASSWORD FROM DUAL;
+
+PASSWORD
+---------
+ASH0457
+
+
+                       
